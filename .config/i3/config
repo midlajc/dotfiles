@@ -69,7 +69,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec xfce4-terminal
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -171,10 +171,13 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # Screen brightness controls
 #brightlight -d 1000
-bindsym XF86MonBrightnessUp exec "brightlight -i 100; notify-send 'brightness up'"
-bindsym XF86MonBrightnessDown exec "brightlight -d 100; notify-send 'brightness down'"
-# bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
-# bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
+#bindsym XF86MonBrightnessUp exec "brightlight -i 100; notify-send 'brightness up'"
+#bindsym XF86MonBrightnessDown exec "brightlight -d 100; notify-send 'brightness down'"
+#bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
+#bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
+bindsym XF86MonBrightnessUp exec "brightnessctl set +5%; notify-send 'brightness up'"
+bindsym XF86MonBrightnessDown exec "brightnessctl set 5%-; notify-send 'brightness down'"
+
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
